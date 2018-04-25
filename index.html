@@ -9,25 +9,42 @@
 <body>
 
    <script>
-       var alphbts = ['a','b',"c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-        var pcGuess = alphbts[Math.floor((Math.random(alphbts.length)*26))];
-        console.log(pcGuess);
-        var tries = 0;
-        do{
-            var userGuess = prompt("Enter a letter!");
-            if(userGuess === pcGuess){
-                alert("Amazing! your guess is correct!!!");
-            }
-            else{
-                alert("Unfortunately that's not the letter computer guessed, Please try again!!")
-                tries = tries+1;
-            }
-        }while(userGuess !== pcGuess && tries < 10);
+        document.write("Press any key to get started!");
+        var guesssedLetters = [];                       // User guesses
+        var pcGuess;                                    // PC guess
+        var words = [['j','a','v','a'],['p','y','t','h','o','n'],['r','u','b','y'],['c','o','b','o','l'],['s','w','i','f','t'],['c','s','h','a','r','p']];
+        // Array of words
 
-        alert("GAME OVER! NO MORE CHANCES FOR YOU!!");
-        
+        var remainingTries;
+       
+        document.onkeypress= function startGame(){
+            var alphabets = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+            
+            pcGuess = words[Math.floor(Math.random(words.length)*words.length)];
+            console.log(pcGuess);
+            var wins = 0;
+            for(var i =0; i<10; i++){
+               var userGuess = prompt("Enter your guess!");
+                
+                for(var j=0; j<pcGuess.length; j++){
+                    
+                    if(userGuess === pcGuess[j]){
+                        console.log(userGuess);
+                        wins++;
+                        console.log(wins);
+                        break;   
+                    }
+                }
+            } 
+        };
 
-        
+        function setBlanks(){
+            for(var i=0; i<pcGguess.length; j++){
+                document.write("_ ");
+            }
+        };
+       
+
    </script>
 
 </body>
