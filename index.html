@@ -1,0 +1,34 @@
+<!doctype HTML> 
+<html>
+
+<head>
+   <title></title>
+   <meta charset="UTF-8">
+</head>
+
+<body>
+
+   <script>
+       var alphbts = ['a','b',"c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+        var pcGuess = alphbts[Math.floor((Math.random(alphbts.length)*26))];
+        console.log(pcGuess);
+        var tries = 0;
+        do{
+            var userGuess = prompt("Enter a letter!");
+            if(userGuess === pcGuess){
+                alert("Amazing! your guess is correct!!!");
+            }
+            else{
+                alert("Unfortunately that's not the letter computer guessed, Please try again!!")
+                tries = tries+1;
+            }
+        }while(userGuess !== pcGuess && tries < 10);
+
+        alert("GAME OVER! NO MORE CHANCES FOR YOU!!");
+        
+
+        
+   </script>
+
+</body>
+</html>
